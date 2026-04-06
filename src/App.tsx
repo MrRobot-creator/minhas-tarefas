@@ -1,10 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux'
+import BarraLateral from './Containers/BarraLateral'
+import ListaDeTarefas from './Containers/ListaDeTarefas'
+import EstiloGlobal, { Container } from './styles'
+import store from './store'
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Provider store={store}>
+      <EstiloGlobal />
+      <Container>
+        <BarraLateral />
+        <ListaDeTarefas />
+      </Container>
+    </Provider>
   )
 }
 
