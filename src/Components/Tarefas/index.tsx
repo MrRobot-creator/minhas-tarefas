@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import * as S from './styles'
 import * as enums from '../../utils/enums/tarefa'
+import { useDispatch } from 'react-redux'
+import { remover } from '../../store/reducers/tarefas'
+
 type Props = {
   titulo: string
   status: enums.Status
@@ -9,7 +12,12 @@ type Props = {
 }
 
 const Tarefa = ({ descricao, prioridade, status, titulo }: Props) => {
-  const [estaEditando, setEstaEditando] = useState(false)
+
+  const dispatch = useDispatch()
+
+
+  const[(estaEditando, setEstaEditando)] = useState(false)
+
   return (
     <S.Card>
       <S.Titulo>{titulo}</S.Titulo>

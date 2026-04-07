@@ -12,6 +12,7 @@ list-style: none;
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 224px auto;
+  font-family: Roboto, sans-serif;
 `
 
 export default EstiloGlobal
